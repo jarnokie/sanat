@@ -45,7 +45,7 @@
             {:else if key === '_'}
                 <Key key={"\u23CE"} callback={enter} color={empty}/>
             {:else}
-                <Key key={key} callback={add_letter} color={correct.has(key) ? right : (wrongplace.has(key) ? wrong : (incorrect.has(key) ? place : empty))}/>
+                <Key key={key} callback={add_letter} color={correct.has(key) ? right : (wrongplace.has(key) ? place : (incorrect.has(key) ? wrong : empty))}/>
             {/if}
         {/each}
     </div>
