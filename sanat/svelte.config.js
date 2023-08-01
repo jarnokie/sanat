@@ -16,6 +16,7 @@ const config = {
 	}
 };
 
+/** @type {import('@sveltejs/kit').Config} */
 const staticconfig = {
 	preprocess: vitePreprocess(),
     kit: {
@@ -27,7 +28,10 @@ const staticconfig = {
             fallback: undefined,
             precompress: false,
             strict: true
-        })
+        }),
+        paths: {
+            base: '/sanat'
+        }
     }
 };
 
