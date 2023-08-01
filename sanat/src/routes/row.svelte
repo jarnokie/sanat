@@ -11,6 +11,7 @@
         const c = w.charAt(i);
         for (let j = 0; j < 5; j++) {
             if (correct.charAt(j) == c && correct.charAt(j) != w.charAt(j)) {
+                // TODO there is still bug hiere for example "lyödä" will show double yellow 'ä' for lääni even though there is only one 'ä'.
                 return place;
             }
         }
