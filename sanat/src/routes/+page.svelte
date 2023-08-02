@@ -2,6 +2,11 @@
     import Words from "./words.svelte";
     import { word_list } from "./util";
     import Keyboard from "./keyboard.svelte";
+    import Help from "./help.svelte";
+
+    function toggle_help() {
+        show_help = !show_help;
+    }
 
     function restart() {
         words = ["", "", "", "", "", ""];
@@ -67,6 +72,8 @@
 
     let message = "";
 
+    let show_help = false;
+
     let correct_letters = new Set<string>();
     let incorrect_letters = new Set<string>();
     let wrongplace_letters = new Set<string>();
@@ -79,6 +86,12 @@
 <div class="container text-center">
     <h1>SANAT</h1>
     <Words words={words} correct={correct}/>
-    <p>{message} {#if i >= 6}<button class="btn btn-primary" on:click={restart}>Uudestaan?</button>{/if}</p>
+    <p>{message} {#if i >= 6}<button class="btn btn-primary mt-1" on:click={restart}>Uudestaan?</button>{/if}</p>
 </div>
 <Keyboard callback={add_word} correct={correct_letters} incorrect={incorrect_letters} wrongplace={wrongplace_letters}/>
+
+{#if show_help}<Help close_fn={toggle_help}/>{/if}
+<button class="btn shadow position-absolute text-center top-0 end-0 m-5 p-3 rounded-circle" style="width: 75px; height: 75px;"
+        on:click={toggle_help}>
+    <strong class="fs-4">?</strong>
+</button>
