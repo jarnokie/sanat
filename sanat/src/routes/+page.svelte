@@ -76,9 +76,9 @@
     ]
 </script>
 
-<div class="container">
-    <h1 class="text-center">SANAT</h1>
+<div class="container text-center">
+    <h1>SANAT</h1>
     <Words words={words} correct={correct}/>
-    <p class="text-center">{message} {#if i >= 6}<button class="btn btn-primary" on:click={restart}>Uudestaan?</button>{/if}</p>
+    <p>{message} {#if i >= 6}<button class="btn btn-primary" on:click={restart}>Uudestaan?</button>{/if}</p>
 </div>
 <Keyboard callback={add_word} correct={correct_letters} incorrect={incorrect_letters} wrongplace={wrongplace_letters}/>
