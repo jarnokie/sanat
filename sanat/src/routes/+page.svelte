@@ -83,6 +83,10 @@
     ]
 </script>
 
+<svelte:head>
+    <title>SANAT</title>
+</svelte:head>
+
 <div class="container text-center">
     <h1>SANAT</h1>
     <Words words={words} correct={correct}/>
@@ -91,7 +95,7 @@
 <Keyboard callback={add_word} correct={correct_letters} incorrect={incorrect_letters} wrongplace={wrongplace_letters}/>
 
 {#if show_help}<Help close_fn={toggle_help}/>{/if}
-<button class="btn shadow position-absolute text-center top-0 end-0 m-5 p-3 rounded-circle" style="width: 75px; height: 75px;"
+<button class="btn shadow position-absolute text-center top-0 end-0 m-1 m-sm-5 rounded-circle" style="width: 75px; height: 75px;"
         on:click={toggle_help}>
     <strong class="fs-4">?</strong>
 </button>
